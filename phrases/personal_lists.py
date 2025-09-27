@@ -1,6 +1,7 @@
 import csv
 
-def process_upload_file(path):
+def process_uploaded_file(path):
+    import csv
     phrases = []
     with open(path, encoding="utf-8") as f:
         reader = csv.reader(f)

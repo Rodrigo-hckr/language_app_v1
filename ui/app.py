@@ -10,11 +10,11 @@ def launch_app():
     root = tk.Tk()
     root.title("LanguageApp")
     
-    tk.label(root, text="Nombre de usuario: ").pack()
+    tk.Label(root, text="Nombre de usuario: ").pack()
     username_entry = tk.Entry(root)
     username_entry.pack()
     
-    tk.label(root, text="Selecciona tu plan:").pack()
+    tk.Label(root, text="Selecciona tu plan:").pack()
     plan_var = tk.Entry(root)
     username_entry.pack()
     

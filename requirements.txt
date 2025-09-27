@@ -1,3 +1,4 @@
 tkinter
 requests 2.32.5
 pydub 0.25.1
+pygame 2.6.1

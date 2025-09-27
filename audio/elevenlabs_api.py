@@ -1,5 +1,4 @@
-from pydub import AudioSegment
-from pydub.playback import play
+import pygame
 import requests
 import os
 from dotenv import load_dotenv
@@ -23,8 +22,13 @@ def elevenlabs_speak(text, voice_id="EXAVITQu4vr4xnSDxMaL"):
     response = requests.post(url, headers=headers, json=data)
     if response.ok:
         with open("temp_audio.mp3", "wb") as f:
-            f.write(response.content) # -> reproducimo con pydub o pygame
-        sound = AudioSegment.from_mp3("temp_audio.mp3")
-        play(sound)
+            f.write(response.content)
+            
+        #Reproducir con pygame
+        pygame.mixer.init()
+        pygame.mixer.music.load("temp_audio.mp3")
+        pygame.mixer.music.play()
+        while pygame.mixer.music.get_busy():
+            pygame.time.Clock().tick(10)
     else:
         print("Error al generar audio:", response.text)

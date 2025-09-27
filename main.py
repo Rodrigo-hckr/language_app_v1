@@ -2,6 +2,7 @@ from auth.user import User
 from plans.access import get_plan_features
 from phrases.loader import load_phrases 
 from audio.tts import speak
+from ui.app import launch_app
 
 def main():
     print("Bienvenido a LanguageAPP v0")
@@ -27,4 +28,4 @@ def main():
         print(f"- {phrase['original']} -> {phrase['translation']}")
         
 if __name__ == "__main__":
-    main()
+    launch_app()
