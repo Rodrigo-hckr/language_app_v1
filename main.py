@@ -16,8 +16,8 @@ def main():
         print(f"{i+1}. {item['original']} -> {item['translation']}")
         play = input("¿Escuchar esta frase? (s/n): ")
         if play.lower() == "s":
-            speak(item["original"])
-            speak(item["translation"])
+            speak(item["original"], item["translation"])
+            
         fav = input("¿Guardar como favorita? (s/n): ")
         if fav.lower() == "s":
             user.add_favorite(item)

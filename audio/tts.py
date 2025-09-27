@@ -1,7 +1,5 @@
-import pyttsx3
+from audio.elevenlabs_api import elevenlabs_speak
 
-def speak(text, lang="es"):
-    engine = pyttsx3.init()
-    engine.setProperty('rate', 150)
-    engine.say(text)
-    engine.runAndWait()
+def speak(original, translation):
+    elevenlabs_speak(original)
+    elevenlabs_speak(translation)
